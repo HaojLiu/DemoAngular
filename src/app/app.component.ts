@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LibriService } from './services/libri.service';
+import { Libro } from './model/libro';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Libreria Biblioteca';
+
+  libri: Libro[];
+  stringaRicerca: string = "";
+
+  constructor(private libriService: LibriService){
+    this.libri = libriService.getAll();
+  }
+
+  cerca(): void
+  {
+    this.libri = [];
+  }
+
+  pulisci(): void
+  {
+    this.stringaRicerca = '';
+    this.cerca();
+  }
 }
