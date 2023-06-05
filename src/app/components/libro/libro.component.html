@@ -1,5 +1,11 @@
 <div class="border border-primary m-2  p-3 d-flex flex-column">
-    <h2>{{libro.titolo}}</h2>
-    <h3>{{libro.autore}}</h3>
+    <h2>{{libro.titolo | tronca}}</h2>
+    <h3>{{libro.autore | tronca:10}}</h3>
     <h4 class="align-self-end">{{libro.prezzo}} €</h4>
+    <img class="w-25" [src]="'../../../assets/png/' + libro.copertina" alt="{{libro.titolo}}">
+    <!--div [class]=" libro.preferito ? 'text-warning' : 'text-secondary' ">{{libro.preferito}}</div-->
+    <div [class.text-warning]="libro.preferito"
+         [class.text-secondary]="!libro.preferito"
+         (click)="modificaPreferito()">{{libro.preferito}}
+    </div>
 </div>

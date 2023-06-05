@@ -8,12 +8,17 @@ import { LibriService } from 'src/app/services/libri.service';
   styleUrls: ['./libro.component.css']
 })
 export class LibroComponent {
-  libriService : LibriService;
+  //libriService : LibriService;
   libro: Libro;
 
-  constructor()
+  constructor(private libriService: LibriService)
   {
-    this.libriService = new LibriService();
+    //this.libriService = new LibriService();
     this.libro = this.libriService.getRandom();
+  }
+
+  modificaPreferito()
+  {
+    this.libro.preferito = !this.libro.preferito;
   }
 }
