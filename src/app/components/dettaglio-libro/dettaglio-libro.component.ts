@@ -10,14 +10,12 @@ import { LibriService } from 'src/app/services/libri.service';
 })
 export class DettaglioLibroComponent {
 
-  id: number;
+  id: number = 0;
   libro?: Libro;
-  libri: Libro[];
   
-  constructor(private routeService: ActivatedRoute, public libriService: LibriService)
+  constructor(private routeService: ActivatedRoute, private libriService: LibriService)
   {
-    this.libri = libriService.getAll();
-    this.id = this.routeService.snapshot.params['id'];
-    this.libriService.getOne(this.id);
+    this.id = + this.routeService.snapshot.params['id']; //il + prova a convertire in numero
+    if(!isNaN(this.id)) this.libro = this.libriService.getOne(this.id);
   }
 }
