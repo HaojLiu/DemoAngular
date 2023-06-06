@@ -8,13 +8,15 @@ import { LibroComponent } from './components/libro/libro.component';
 import { LibriService } from './services/libri.service';
 import { TroncaPipe } from './pipes/tronca.pipe';
 import { FormsModule } from '@angular/forms';
+import { RicercaComponent } from './components/ricerca/ricerca.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     LibroComponent,
-    TroncaPipe
+    TroncaPipe,
+    RicercaComponent
   ],
   imports: [
     BrowserModule,
