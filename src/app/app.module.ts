@@ -13,6 +13,7 @@ import { ElencoLibriComponent } from './components/elenco-libri/elenco-libri.com
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DettaglioLibroComponent } from './components/dettaglio-libro/dettaglio-libro.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DettaglioLibroComponent } from './components/dettaglio-libro/dettaglio-
     ElencoLibriComponent,
     AboutComponent,
     NotFoundComponent,
-    DettaglioLibroComponent
+    DettaglioLibroComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

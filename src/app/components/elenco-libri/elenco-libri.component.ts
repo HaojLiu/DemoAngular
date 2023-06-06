@@ -8,7 +8,7 @@ import { LibriService } from 'src/app/services/libri.service';
   styleUrls: ['./elenco-libri.component.css']
 })
 export class ElencoLibriComponent {
-  title = 'Libreria Biblioteca';
+
 
   libri: Libro[];
 
