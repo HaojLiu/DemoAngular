@@ -5,8 +5,8 @@ import { Libro } from "../model/libro";
 export class LibriService
 {
     private libri : Libro[] = [
-        new Libro('La Divina Commedia', 'Dante Alighieri', 12,'divinacommedia.png'),
-        new Libro('I Promessi Sposi', 'Alessandro Manzoni', 20, 'promessisposi.png')
+        new Libro(1, 'I Promessi Sposi', 'Alessandro Manzoni', 20, 'promessisposi.png'),
+        new Libro(2, 'La Divina Commedia', 'Dante Alighieri', 12,'divinacommedia.png')  
     ]
 
     getAll() : Libro[]
@@ -29,5 +29,10 @@ export class LibriService
         if(stringaRicerca == '') return this.getAll();
 
         return this.libri.filter(l => l.titolo.toLowerCase().includes(stringaRicerca) || l.autore.toLowerCase().includes(stringaRicerca));
-      }
+    }
+
+    getOne(par_id : number) : Libro | undefined
+    {
+        return this.libri.find(l => l.id == par_id);
+    }
 }

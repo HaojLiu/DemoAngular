@@ -1,12 +1,5 @@
-<h1>{{title}}</h1>
-
-<app-ricerca (cercaEvent)="cerca($event)"></app-ricerca>
-
-<ng-container *ngFor="let l of libri">
-    <app-libro [libro]="l"></app-libro>
-</ng-container>
-<ng-container *ngIf="libri.length == 0">
-    Nessun libro disponibile
-</ng-container>
-
-<app-footer></app-footer>
+<div class="container">
+    <router-outlet></router-outlet>
+    <!--diventa una pagina che contiene solamente la struttura generale che verrà applicato a tutte le pagine di questo sito-->
+    <app-footer></app-footer>
+</div>
