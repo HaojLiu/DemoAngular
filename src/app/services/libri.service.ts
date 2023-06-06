@@ -25,8 +25,9 @@ export class LibriService
     }
 
     find(stringaRicerca: string): Libro[] {
+        stringaRicerca = stringaRicerca.toLowerCase(); //lo rendo case insensitive
         if(stringaRicerca == '') return this.getAll();
 
-        return this.libri.filter(l => l.titolo.includes(stringaRicerca) || l.autore.includes(stringaRicerca));
+        return this.libri.filter(l => l.titolo.toLowerCase().includes(stringaRicerca) || l.autore.toLowerCase().includes(stringaRicerca));
       }
 }

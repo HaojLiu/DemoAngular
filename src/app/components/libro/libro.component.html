@@ -5,10 +5,7 @@
         <h3>{{libro.autore | tronca:10}}</h3>
         <h4 class="align-self-end">{{libro.prezzo}} €</h4>
         <!--div [class]=" libro.preferito ? 'text-warning' : 'text-secondary' ">{{libro.preferito}}</div-->
-        <div [class.text-warning]="libro.preferito"
-            [class.text-secondary]="!libro.preferito"
-            (click)="modificaPreferito()">{{libro.preferito}}
-        </div>
+        <img width="40px" [src]="libro.preferito ? '../../../assets/png/like.svg' : '../../../assets/png/dislike.svg'" (click)="modificaPreferito()">
     </ng-container>
     <ng-template #elseBlock>Libro non valido</ng-template>
 </div>
