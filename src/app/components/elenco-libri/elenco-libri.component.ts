@@ -10,14 +10,14 @@ import { LibriService } from 'src/app/services/libri.service';
 export class ElencoLibriComponent {
 
 
-  libri: Libro[];
+  libri: Libro[] = [];
 
   constructor(private libriService: LibriService){
-    this.libri = libriService.getAll();
+    libriService.getAll().subscribe(r => this.libri = r);
   }
 
   cerca(valore: string): void
   {
-    this.libri = this.libriService.find(valore);
+    this.libriService.find(valore).subscribe( r => this.libri = r );
   }
 }

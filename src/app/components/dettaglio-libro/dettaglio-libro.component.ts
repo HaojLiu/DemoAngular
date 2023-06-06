@@ -16,6 +16,6 @@ export class DettaglioLibroComponent {
   constructor(private routeService: ActivatedRoute, private libriService: LibriService)
   {
     this.id = + this.routeService.snapshot.params['id']; //il + prova a convertire in numero
-    if(!isNaN(this.id)) this.libro = this.libriService.getOne(this.id);
+    if(!isNaN(this.id)) this.libriService.getOne(this.id).subscribe( r => this.libro = r );
   }
 }
